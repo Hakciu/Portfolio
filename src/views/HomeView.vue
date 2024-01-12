@@ -42,8 +42,4 @@
     z-index: 4;
     font-family: 'Lexend', sans-serif;
   }
-
-  .empty-space {
-    height: 600vh;
-  }
 </style>
