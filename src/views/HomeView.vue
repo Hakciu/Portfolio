@@ -7,17 +7,19 @@
 </script>
 
 <template>
-  <main>
-    <Transition name="scale">
-      <div class="main-card" v-if="show">
-        <MainCard />
+  <div>
+    <main>
+      <Transition name="scale">
+        <div class="main-card" v-if="show">
+          <MainCard />
 
-        <h1 class="hero">Lorem</h1>
-      </div>
-    </Transition>
-    <div class="empty-space"></div>
-  </main>
-  <test />
+          <h1 class="hero">Lorem</h1>
+        </div>
+      </Transition>
+      <div class="empty-space"></div>
+    </main>
+    <test />
+  </div>
 </template>
 
 <style scoped>

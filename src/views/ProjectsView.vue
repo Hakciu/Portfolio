@@ -1,16 +1,16 @@
 <script setup>
-  import test from '../components/test.vue'
+  import test from '@/components/test.vue'
 </script>
 
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="projects">
+    <h1>This is an projects page</h1>
     <test />
   </div>
 </template>
 
 <style>
-  .about {
+  .projects {
     display: flex;
     flex-direction: column;
     justify-content: center;

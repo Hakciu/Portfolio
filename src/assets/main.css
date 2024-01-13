@@ -31,3 +31,19 @@
   transform: scale(1);
   transform-origin: right;
 }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease,
+    transform 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+.fade-enter-from,
+.fade-leave-to {
+  transform: scale(0);
+  opacity: 0;
+}
+.fade-enter-to,
+.fade-leave-from {
+  transform: scale(1);
+  opacity: 1;
+}

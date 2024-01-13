@@ -2,6 +2,19 @@
   import { ref, reactive, onMounted, watch, inject } from 'vue'
   import Logo from './Logo.vue'
   import Lenis from '@studio-freight/lenis'
+  import { useRoute } from 'vue-router'
+  const route = useRoute()
+
+  watch(
+    () => route.path,
+    (newPath) => {
+      emitUpdateShowNav(false)
+    }
+  )
+
+  const emitUpdateShowNav = (value) => {
+    emit('update:showNav', value)
+  }
 
   const lenisInstance = new Lenis()
 
@@ -30,7 +43,7 @@
   })
 
   const toggleNav = () => {
-    emit('update:showNav', !props.showNav)
+    emitUpdateShowNav(!props.showNav)
   }
 
   watch(
@@ -50,8 +63,6 @@
   )
 
   const show = inject('showPage')
-
-  const showMail = ref(false)
 </script>
 
 <template>
@@ -93,15 +104,33 @@
         <h4 class="mail">JJanik2k@gmail.com</h4>
       </div>
       <div class="routes">
-        <h2 data-text="work" class="work">work</h2>
-        <h2 data-text="about me" class="about-me">about me</h2>
-        <h2 data-text="contact" class="contact">contact</h2>
+        <router-link
+          @click="emitUpdateShowNav(false)"
+          to="/projects"
+          data-text="projects"
+          class="projects"
+          >projects</router-link
+        >
+        <router-link
+          @click="emitUpdateShowNav(false)"
+          to="/about"
+          data-text="about me"
+          class="about-me"
+          >about me</router-link
+        >
+        <router-link
+          @click="emitUpdateShowNav(false)"
+          to="/contact"
+          data-text="contact"
+          class="contact"
+          >contact</router-link
+        >
       </div>
     </div>
   </nav>
 </template>
 
-<style>
+<style scoped>
   nav {
     position: relative;
     z-index: 4;
@@ -214,14 +243,16 @@
     font-family: 'Lilita One', sans-serif;
   }
 
-  h2 {
+  a {
     font-size: 8rem;
     cursor: pointer;
     font-family: 'Konkhmer Sleokchher', system-ui;
     position: relative;
+    text-decoration: none;
+    color: #1c1d1e;
   }
 
-  h2 {
+  a {
     box-shadow: inset 0 0 0 0 #1c1d1e;
     padding: 0 0.25rem;
     margin: 0 -0.25rem;
@@ -229,7 +260,7 @@
     padding: 0 2rem;
   }
 
-  h2:hover {
+  a:hover {
     color: #fbfbf6;
     box-shadow: inset 41rem 0 0 0 #1c1d1e;
   }

@@ -8,7 +8,6 @@
   import Footer from './components/Footer.vue'
 
   import Lenis from '@studio-freight/lenis'
-
   let lenis
   let rafId
 
@@ -65,7 +64,11 @@
       <Scrollbar />
       <Blur />
       <Blob />
-      <RouterView />
+      <RouterView v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </RouterView>
     </div>
     <Footer />
   </div>
