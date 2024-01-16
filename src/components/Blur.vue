@@ -10,6 +10,6 @@
     width: 100%;
     position: fixed;
     z-index: 2;
-    backdrop-filter: blur(10vmax);
+    backdrop-filter: blur(200px);
   }
 </style>
