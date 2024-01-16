@@ -52,7 +52,7 @@
     <Navbar :showNav="showNav" @update:showNav="updateShowNav" />
     <div ref="container">
       <Scrollbar />
-      <!-- <Blur /> -->
+      <Blur />
       <Blob />
       <RouterView v-slot="{ Component }">
         <transition name="fade" mode="out-in">
