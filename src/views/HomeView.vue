@@ -11,7 +11,7 @@
     <main>
       <Transition name="scale">
         <div class="main-card" v-if="show">
-          <!-- <MainCard /> -->
+          <MainCard />
 
           <h1 class="hero">Lorem</h1>
         </div>

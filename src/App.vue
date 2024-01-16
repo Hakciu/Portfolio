@@ -53,7 +53,7 @@
     <div ref="container">
       <Scrollbar />
       <!-- <Blur /> -->
-      <!-- <Blob /> -->
+      <Blob />
       <RouterView v-slot="{ Component }">
         <transition name="fade" mode="out-in">
           <component :is="Component" />
