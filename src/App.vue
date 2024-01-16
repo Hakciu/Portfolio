@@ -34,23 +34,23 @@
 
   provide('showPage', showPage)
 
-  onUnmounted(() => {
-    if (lenis) {
-      lenis.destroy()
-    }
+  // onUnmounted(() => {
+  //   if (lenis) {
+  //     lenis.destroy()
+  //   }
 
-    if (rafId) {
-      cancelAnimationFrame(rafId)
-    }
-  })
+  //   if (rafId) {
+  //     cancelAnimationFrame(rafId)
+  //   }
+  // })
 
-  watch(showNav, (newVal) => {
-    if (newVal) {
-      lenis.stop()
-    } else {
-      lenis.start()
-    }
-  })
+  // watch(showNav, (newVal) => {
+  //   if (newVal) {
+  //     lenis.stop()
+  //   } else {
+  //     lenis.start()
+  //   }
+  // })
 
   const updateShowNav = (newVal) => {
     showNav.value = newVal
