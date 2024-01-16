@@ -34,23 +34,13 @@
 
   provide('showPage', showPage)
 
-  // onUnmounted(() => {
-  //   if (lenis) {
-  //     lenis.destroy()
-  //   }
-
-  //   if (rafId) {
-  //     cancelAnimationFrame(rafId)
-  //   }
-  // })
-
-  // watch(showNav, (newVal) => {
-  //   if (newVal) {
-  //     lenis.stop()
-  //   } else {
-  //     lenis.start()
-  //   }
-  // })
+  watch(showNav, (newVal) => {
+    if (newVal) {
+      lenis.stop()
+    } else {
+      lenis.start()
+    }
+  })
 
   const updateShowNav = (newVal) => {
     showNav.value = newVal
@@ -62,8 +52,8 @@
     <Navbar :showNav="showNav" @update:showNav="updateShowNav" />
     <div ref="container">
       <Scrollbar />
-      <Blur />
-      <Blob />
+      <!-- <Blur /> -->
+      <!-- <Blob /> -->
       <RouterView v-slot="{ Component }">
         <transition name="fade" mode="out-in">
           <component :is="Component" />
